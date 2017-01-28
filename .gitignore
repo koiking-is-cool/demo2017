@@ -28,3 +28,5 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Lab3/Library
+Lab3/obj/
