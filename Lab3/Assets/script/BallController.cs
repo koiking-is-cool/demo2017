@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BallController : MonoBehaviour {
 	public Rigidbody rg;
 	public float speed;
 	public TextMesh txtBall;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -26,5 +28,13 @@ public class BallController : MonoBehaviour {
 			cntCollosion++;
 			txtBall.text = "Floor : " + cntCollosion.ToString ();
 		}
+	}
+
+	System.Action
+	void OnDestroy(){
+		sceneballcontroller.life--;
+		GameObject dieEffect = Instantiate (dieEffectPrefab);
+		dieEffect.transform.position = this.gameObject.transform.position;
+		dieCallBack();
 	}
 }
